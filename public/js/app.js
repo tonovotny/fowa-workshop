@@ -19,8 +19,7 @@
     });
 
     var Library = Backbone.Collection.extend({
-        model: Book,
-        url: '/api/books'
+        model: Book 
     });
 
     var BookView = Backbone.View.extend({
@@ -52,9 +51,9 @@
         el: $("#books"),
 
         initialize: function () {
-            //this.collection = new Library(books);
-            this.collection = new Library();
-            this.collection.fetch();
+            this.collection = new Library(books);
+            //this.collection = new Library();
+            //this.collection.fetch();
             this.render();
 
             this.collection.on("add", this.renderBook, this);
